@@ -19,7 +19,7 @@ app.use(express.json())
 // })
 routes(app)
 
-app.listen('4000', () => {
+app.listen('https://vccp-be.vercel.app/', () => {
 
 })
 

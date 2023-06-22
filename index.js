@@ -9,7 +9,13 @@ const db = require('./config/db')
 
 db.connect()
 
-app.use(cors())
+app.use(cors({
+    origin: "https://vccp-be.vercel.app", // Vervang door de juiste oorsprong
+    methods: "GET, POST, PUT, DELETE", // Vervang door de toegestane methoden
+    allowedHeaders: "Content-Type", // Vervang door de toegestane headers
+    credentials: true, // Schakel cookies en verificatie in indien nodig
+    optionsSuccessStatus: 200
+}))
 app.use(express.json())
 // app.use((req, res) => {
 //     res.header("Access-Control-Allow-Origin", 'http://localhost:3000');
@@ -19,7 +25,7 @@ app.use(express.json())
 // })
 routes(app)
 
-app.listen('https://vccp-be.vercel.app/', () => {
+app.listen('https://vccp-be.vercel.app', () => {
 
 })
 

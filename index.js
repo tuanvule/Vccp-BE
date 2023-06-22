@@ -10,7 +10,7 @@ const db = require('./config/db')
 db.connect()
 
 app.use(cors({
-    origin: "https://vccp-be.vercel.app", // Vervang door de juiste oorsprong
+    origin: "http://localhost:3000/", // Vervang door de juiste oorsprong
     methods: "GET, POST, PUT, DELETE", // Vervang door de toegestane methoden
     allowedHeaders: "Content-Type", // Vervang door de toegestane headers
     credentials: true, // Schakel cookies en verificatie in indien nodig

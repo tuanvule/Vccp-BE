@@ -10,13 +10,12 @@ const db = require('./config/db')
 db.connect()
 
 // app.use(cors())
-app.use(express.json())
-// app.use((req, res) => {
-//     res.header("Access-Control-Allow-Origin", 'http://localhost:3000');
-//     res.header("Access-Control-Allow-Credentials", true);
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Options");
-//     res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-// })
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
+  })
 routes(app)
 
 app.listen('https://vccp-be.vercel.app', () => {

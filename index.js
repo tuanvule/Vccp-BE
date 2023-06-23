@@ -11,7 +11,7 @@ db.connect()
 
 // app.use(cors())
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
+    res.setHeader("Access-Control-Allow-Origin", "https://vccp-be.vercel.app/");
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     next();

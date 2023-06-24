@@ -5,18 +5,15 @@ class LoginController {
 
     signup(req, res, next) {
         try {
-            const img = req.body.name.charAt(0).toUpperCase()
-            // addDocument('users', value)
-            req.body.avata = img
+            const userData = JSON.parse(req.query.data)
+            const img = userData.name.charAt(0).toUpperCase()
+            userData.avata = img
 
-            const creator = new Creator(req.body)
+            const creator = new Creator(userData)
             creator.save()
                 .then(data => res.json(data))
                 .catch(err => res.json(err))
-
-            // res.json(req.body)
         } catch (err) {
-            console.log(err);
             res.json(err)
         }
     }

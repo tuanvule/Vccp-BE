@@ -70,6 +70,21 @@ class CreatorController {
                     messages: err
                 }))
         }
+
+        if(req.query.getAll) {
+            Creator.find()
+                .then(data => {
+                    const a = []
+                    data.forEach(b => {
+                        const newb = b.toObject()
+                        a.push(newb.name)
+                    })
+                    res.json(a)
+                })
+                .catch(err => res.json({
+                    messages: err
+                }))
+        }
     }
 
     follow(req, res, next) {

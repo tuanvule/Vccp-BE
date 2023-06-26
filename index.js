@@ -24,13 +24,13 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 routes(app)
 
-app.listen('https://vccp-be.vercel.app', () => {
-
-})
-
-// app.listen(4000, () => {
+// app.listen('https://vccp-be.vercel.app', () => {
 
 // })
+
+app.listen(4000, () => {
+
+})
 
 
 // var http = require('http');

@@ -3,7 +3,7 @@ const router = express.Router()
 const CreatorController = require('../app/controllers/creator')
 
 router.get('/getCreator/:id', CreatorController.get)
-router.get('/getCreator/', CreatorController.get)
+router.get('/getCreator', CreatorController.get)
 router.post('/create', CreatorController.create)
 router.post('/updateProfile/:id', CreatorController.updateProfile)
 router.delete('/delete/:id', CreatorController.delete)

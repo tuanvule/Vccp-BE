@@ -14,7 +14,7 @@ class LoginController {
                 .then(data => res.json(data))
                 .catch(err => res.json(err))
 
-            res.json(userData)
+            // res.json(userData)
         } catch (err) {
             res.json(err)
         }

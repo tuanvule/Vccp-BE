@@ -43,10 +43,12 @@ class VideoController {
 
     create(req, res, next) {
       
-      const video = new Video(req.body)
-      video.save()
-        .then(data => res.json(data))
-        .catch(err => console.log(err))
+      // const data = {...JSON.parse(req.query.data), videoUrl: req.query.videoUrl}
+      console.log(req.body)
+      // const video = new Video(data)
+      // video.save()
+      //   .then(data => res.json(data))
+      //   .catch(err => console.log(err))
     }
 
     delete(req, res, next) {

@@ -7,7 +7,7 @@ const Creator = require("../models/creator")
 class CreatorController {
 
     get(req, res, next) {
-        if(req.params.id) {
+        if(req.body._id || req.params.id) {
             const newParams = req.params.id.split(',')
             if(typeof newParams !== 'object') {
                 Creator.findById(req.body._id || req.params.id)
@@ -111,11 +111,13 @@ class CreatorController {
     }
 
     async updateProfile(req, res, next) {
+        console.log(req.params)
+        console.log(req.body)
         try {
-            const { story } = req.body
+            const { avata } = req.body
 
             const profile = { 
-                story,
+                avata,
             }
     
             await Creator.updateOne({_id: req.params.id}, profile)
@@ -126,11 +128,6 @@ class CreatorController {
             res.json(error)
         }
     }
-
-    delete(req, res, next) {
-
-    }
-
 }
 
 module.exports = new CreatorController()

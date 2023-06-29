@@ -48,6 +48,13 @@ class CommentController {
             .then(data => res.json(data))
     }
 
+    update(req, res, next) {
+        Comment.updateMany({Cid: req.params.id}, req.body)
+          .then(() => console.log('success'))
+          .catch(err => console.log(err))
+  
+    }
+
     createReply(req, res, next) {
         const data = {
             commentId: req.params.commentId,

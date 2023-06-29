@@ -41,6 +41,13 @@ class VideoController {
         .catch(err => console.log(data))
     }
 
+    update(req, res, next) {
+      Video.updateMany({Cid: req.params.id}, req.body)
+        .then(() => console.log('success'))
+        .catch(err => console.log(err))
+
+    }
+
     create(req, res, next) {
       
       // const data = {...JSON.parse(req.query.data), videoUrl: req.query.videoUrl}
